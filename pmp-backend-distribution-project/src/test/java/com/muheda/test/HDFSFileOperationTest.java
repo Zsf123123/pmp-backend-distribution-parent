@@ -1,6 +1,6 @@
 package com.muheda.test;
 
-import com.muheda.service.impl.HDFSFileOperation;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class HDFSFileOperationTest {
     @Test
     public void testFile() throws IOException {
 
-       new HDFSFileOperation().fileDownLoad("/storage-hbase-device-jar-with-dependencies.jar");
+//       new HDFSFileOperation().fileDownLoad("/storage-hbase-device-jar-with-dependencies.jar");
 
     }
 

@@ -4,9 +4,8 @@ import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.Session;
 import com.muheda.utils.RemoteCommandUtil;
 import org.junit.Test;
-
 import java.io.IOException;
-import java.io.InputStream;
+
 
 public class LinuxFileSystemOperationTest {
 
@@ -27,7 +26,11 @@ public class LinuxFileSystemOperationTest {
         Scpclient scp = Scpclient.getInstance("172.17.3.143", 22, "root", "www.muheda.com");
 //      scp.putFile("/opt/soft/storage-hbase-device-jar-with-dependencies.jar", "storage-hbase-device-jar-with-dependencies.jar", "/opt/soft/", null);
 
-        scp.putFile("/Users/zhangshaofan/project/pmp-backend-parent/pmp-backend-distribution-project/src/main/shell/test.sh","test.sh","/opt",null);
+//        scp.putFile("/Users/zhangshaofan/project/pmp-backend-parent/pmp-backend-distribution-project/src/main/shell/test.sh","test.sh","/opt",null);
+
+
+
+        scp.putFile("/Users/zhangshaofan/project/pmp-backend-distribution-parent/pmp-backend-distribution-project/src/main/resources/hdfsDownload.sh","hdfsDownload.sh","/opt/test",null);
 
 
     }
@@ -41,17 +44,23 @@ public class LinuxFileSystemOperationTest {
 
         Connection connection = RemoteCommandUtil.login("172.17.3.143", "root", "www.muheda.com");
 
-//      String execute = RemoteCommandUtil.execute(connection, "hdfs  dfs  -get /car-alarm-analysis-jar-with-dependencies.jar   /opt/soft");
+        String execute = RemoteCommandUtil.execute(connection, "hdfs  dfs  -get /car-alarm-analysis-jar-with-dependencies.jar   /opt/soft");
 
-        String execute = RemoteCommandUtil.execute(connection, "nohup spark-submit --master yarn --deploy-mode client --driver-memory 1G --num-executors 2 --executor-memory 1G --executor-cores 2 --class com.muheda.Kafka2HbaseApp   /opt/spark/jar/gtInfo.jar  >  /opt/spark/log/gtInfo.log  2>&1 &" );
+/*      String execute = RemoteCommandUtil.execute(connection, "nohup spark-submit --master yarn --deploy-mode client --driver-memory 1G --num-executors 2 --executor-memory 1G --executor-cores 2 --class com.muheda.Kafka2HbaseApp   /opt/spark/jar/gtInfo.jar  >  /opt/spark/log/gtInfo.log  2>&1 &" );*/
+
+
+//        String execute = RemoteCommandUtil.execute(connection, "if [ ! -d  " + + " ]; then\n  mkdir  -p /opt/test4\n fi");
+
+
+
 
         System.out.println(execute);
 
-        Connection connection1 = RemoteCommandUtil.login("172.17.3.143", "root", "www.muheda.com");
+/*        Connection connection1 = RemoteCommandUtil.login("172.17.3.143", "root", "www.muheda.com");
 
         String execute1 = RemoteCommandUtil.execute(connection1, "ps -ef|grep gtInfo.jar | grep -v grep| wc -l");
 
-        System.out.println(execute1);
+        System.out.println(execute1);*/
 
         connection.close();
 

@@ -1,7 +1,7 @@
-package com.muheda.service.impl;
+package com.muheda.dao.network.impl;
 
 import com.muheda.pojo.Host;
-import com.muheda.service.AbstractRemoteFileNetOperation;
+import com.muheda.dao.network.AbstractRemoteFileNetOperation;
 import com.muheda.utils.Contans;
 import com.muheda.utils.StringUtils;
 import org.apache.hadoop.conf.Configuration;

@@ -6,13 +6,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import ch.ethz.ssh2.Connection;
+import ch.ethz.ssh2.Session;
+import ch.ethz.ssh2.StreamGobbler;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.ethz.ssh2.Connection;
-import ch.ethz.ssh2.Session;
-import ch.ethz.ssh2.StreamGobbler;
 
 
 public class RemoteCommandUtil {

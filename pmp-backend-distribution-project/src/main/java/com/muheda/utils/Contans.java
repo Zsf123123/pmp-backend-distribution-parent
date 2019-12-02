@@ -61,6 +61,11 @@ public interface Contans {
      */
     String REMOTE_PASSWORD = "wwww.muheda.com";
 
+    /**
+     * SCP端口
+     */
+    Integer SSH_PORT = 22;
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.muheda.service;
+package com.muheda.dao.network;
 
 import com.muheda.pojo.Host;
 
